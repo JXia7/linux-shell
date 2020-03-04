@@ -1,0 +1,45 @@
+vagrant@ubuntu-xenial:~/lab-functions$ tree
+.
+├── file1
+├── file2
+└── script.sh
+
+0 directories, 3 files
+vagrant@ubuntu-xenial:~/lab-functions$ ./script.sh ~
+lab-functions
+vagrant@ubuntu-xenial:~/lab-functions$ ./script.sh ~/lab-functions/
+file1 file2 script.sh
+vagrant@ubuntu-xenial:~/lab-functions$ ./script.sh file1 file2
+  File: 'file1'
+  Size: 0         	Blocks: 0          IO Block: 4096   regular empty file
+Device: 801h/2049d	Inode: 256030      Links: 1
+Access: (0664/-rw-rw-r--)  Uid: ( 1000/ vagrant)   Gid: ( 1000/ vagrant)
+Access: 2019-05-01 04:46:50.015528899 +0000
+Modify: 2019-05-01 04:46:50.015528899 +0000
+Change: 2019-05-01 04:46:50.015528899 +0000
+ Birth: -
+  File: 'file2'
+  Size: 0         	Blocks: 0          IO Block: 4096   regular empty file
+Device: 801h/2049d	Inode: 256031      Links: 1
+Access: (0664/-rw-rw-r--)  Uid: ( 1000/ vagrant)   Gid: ( 1000/ vagrant)
+Access: 2019-05-01 04:46:50.015528899 +0000
+Modify: 2019-05-01 04:46:50.015528899 +0000
+Change: 2019-05-01 04:46:50.015528899 +0000
+ Birth: -
+vagrant@ubuntu-xenial:~/lab-functions$ ./script.sh file1 file2 lab-functions
+  File: 'file1'
+  Size: 0         	Blocks: 0          IO Block: 4096   regular empty file
+Device: 801h/2049d	Inode: 256030      Links: 1
+Access: (0664/-rw-rw-r--)  Uid: ( 1000/ vagrant)   Gid: ( 1000/ vagrant)
+Access: 2019-05-01 04:46:50.015528899 +0000
+Modify: 2019-05-01 04:46:50.015528899 +0000
+Change: 2019-05-01 04:46:50.015528899 +0000
+ Birth: -
+  File: 'file2'
+  Size: 0         	Blocks: 0          IO Block: 4096   regular empty file
+Device: 801h/2049d	Inode: 256031      Links: 1
+Access: (0664/-rw-rw-r--)  Uid: ( 1000/ vagrant)   Gid: ( 1000/ vagrant)
+Access: 2019-05-01 04:46:50.015528899 +0000
+Modify: 2019-05-01 04:46:50.015528899 +0000
+Change: 2019-05-01 04:46:50.015528899 +0000
+ Birth: -

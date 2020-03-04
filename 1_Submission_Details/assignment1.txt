@@ -1,0 +1,105 @@
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+jclnbill@VirtualBox:~$ ssh jxia7@hills.ccsf.edu
+jxia7@hills.ccsf.edu's password: 
+Last login: Sun Apr  7 19:48:55 2019 from 73.162.135.80
+
+**********************************************************
+* W A R N I N G !                                        *
+*                                                        *
+* BY ACCESSING AND USING THIS SYSTEM YOU CONSENT TO      *
+* SYSTEM MONITORING FOR LAW ENFORCEMENT AND OTHER        *
+* PURPOSES.                                              *
+*                                                        *
+* UNAUTHORIZED USE OF THIS COMPUTER SYSTEM MAY SUBJECT   *
+* YOU TO CRIMINAL PROSECUTION AND PENALTIES.             *
+*                                                        *
+* DO NOT COPY OR INSTALL ANY ILLEGAL OR UNLICENSED       *
+* SOFTWARE ON THIS COMPUTER SYSTEM!                      *
+* Refer to CCSF Computer Usage Policy for additional     *
+* information: http://www.ccsf.edu/Policy/NEWpolicy.html *
+*                                                        *
+* INTERNSHIP INFORMATION is in /pub/cs/internships.txt   *
+*                                                        *
+**********************************************************
+
+[jxia7@hills ~]$ ls
+[jxia7@hills ~]$ mkdir dir-1
+[jxia7@hills ~]$ mkdir dir-2
+[jxia7@hills ~]$ mkdir dir-3
+[jxia7@hills ~]$ ls
+dir-1  dir-2  dir-3
+[jxia7@hills ~]$ pwd
+/students/jxia7
+[jxia7@hills ~]$ ls
+dir-1  dir-2  dir-3
+[jxia7@hills ~]$ cd dir-1
+[jxia7@hills dir-1]$ ls
+[jxia7@hills dir-1]$ touch file-1
+[jxia7@hills dir-1]$ touch file-2
+[jxia7@hills dir-1]$ ls
+file-1  file-2
+[jxia7@hills dir-1]$ chmod u+w file-1
+[jxia7@hills dir-1]$ ls
+file-1  file-2
+[jxia7@hills dir-1]$ chmod g+x file-1
+[jxia7@hills dir-1]$ ls
+file-1  file-2
+[jxia7@hills dir-1]$ chmod o-r file-1
+[jxia7@hills dir-1]$ ls
+file-1  file-2
+[jxia7@hills dir-1]$ mv file-2 file-rename
+[jxia7@hills dir-1]$ ls
+file-1  file-rename
+[jxia7@hills dir-1]$ mkdir subdir-1
+[jxia7@hills dir-1]$ ls
+file-1  file-rename  subdir-1
+[jxia7@hills dir-1]$ mv file-rename file-3
+[jxia7@hills dir-1]$ ls
+file-1  file-3  subdir-1
+[jxia7@hills dir-1]$ mv file-3 subdir-1
+[jxia7@hills dir-1]$ ls
+file-1  subdir-1
+[jxia7@hills dir-1]$ cd subdir-1
+[jxia7@hills subdir-1]$ ls
+file-3
+[jxia7@hills subdir-1]$ cd ..
+[jxia7@hills dir-1]$ ls
+file-1  subdir-1
+[jxia7@hills dir-1]$ cp file-3 file-copy
+cp: cannot stat ‘file-3’: No such file or directory
+[jxia7@hills dir-1]$ cp file-1 file-copy
+[jxia7@hills dir-1]$ ls
+file-1  file-copy  subdir-1
+[jxia7@hills dir-1]$ rm file-copy
+[jxia7@hills dir-1]$ ls
+file-1  subdir-1
+[jxia7@hills dir-1]$ cd ..
+[jxia7@hills ~]$ ls
+dir-1  dir-2  dir-3
+[jxia7@hills ~]$ ls -a dir-1/file-1
+dir-1/file-1
+[jxia7@hills ~]$ ls -l dir-1/file-1
+-rw---x--- 1 jxia7 students 0 Apr  7 20:06 dir-1/file-1
+[jxia7@hills ~]$ ls -d dir-1/file-1
+dir-1/file-1
+[jxia7@hills ~]$ ls -a dir-1/subdir-1/file-3
+dir-1/subdir-1/file-3
+[jxia7@hills ~]$ 
+[jxia7@hills ~]$ ls -l dir-1/subdir-1/file-3
+-rw------- 1 jxia7 students 0 Apr  7 20:06 dir-1/subdir-1/file-3
+[jxia7@hills ~]$ ls -s dir-1/subdir-1/file-3
+0 dir-1/subdir-1/file-3
+[jxia7@hills ~]$ man command
+[jxia7@hills ~]$ ls -a dir-1
+.  ..  file-1  subdir-1
+[jxia7@hills ~]$ ls -l dir-1
+total 0
+-rw---x--- 1 jxia7 students  0 Apr  7 20:06 file-1
+drwx------ 2 jxia7 students 20 Apr  7 20:09 subdir-1
+[jxia7@hills ~]$ ls -s dir-1
+total 0
+0 file-1  0 subdir-1
+[jxia7@hills ~]$ 
+

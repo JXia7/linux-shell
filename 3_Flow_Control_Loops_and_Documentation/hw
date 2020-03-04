@@ -1,0 +1,66 @@
+jclnbill@VirtualBox:~$ cd pg
+jclnbill@VirtualBox:~/pg$ ls
+dir  test.sh
+
+#Begin Display without the document
+jclnbill@VirtualBox:~/pg$ ./test.sh
+Task IF-ELSE, Enter a number > 5
+The input is a number between 0 and 9.
+Task CASE, Enter a number > 5
+The input is a number between 0 and 9.
+./dir is a Directory.
+./DIRECTORY is a Directory.
+./test.sh is a File.
+7
+10
+13
+16
+19
+22
+25
+28
+31
+34
+37
+(Until loop) Enter a number:
+5
+(Until loop) Enter a number:
+11
+Do you like BASH?
+yes
+jclnbill@VirtualBox:~/pg$ ls
+dir  DIRECTORY  test.sh
+jclnbill@VirtualBox:~/pg$ touch hwtest
+jclnbill@VirtualBox:~/pg$ ls
+dir  DIRECTORY  hwtest  test.sh
+
+#Display again with the document
+jclnbill@VirtualBox:~/pg$ ./test.sh
+the file name is:  hwtest
+the directory exists.
+Task IF-ELSE, Enter a number > 6
+The input is a number between 0 and 9.
+Task CASE, Enter a number > 6
+The input is a number between 0 and 9.
+./dir is a Directory.
+./DIRECTORY is a Directory.
+./hwtest is a File.
+./test.sh is a File.
+7
+10
+13
+16
+19
+22
+25
+28
+31
+34
+37
+(Until loop) Enter a number:
+6
+(Until loop) Enter a number:
+11
+Do you like BASH?
+yes
+

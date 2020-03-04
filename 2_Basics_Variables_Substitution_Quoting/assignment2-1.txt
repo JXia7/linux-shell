@@ -1,0 +1,81 @@
+jclnbill@VirtualBox:~$ ssh jxia7@hills.ccsf.edu
+jxia7@hills.ccsf.edu's password: 
+Last login: Mon Apr  8 19:08:06 2019 from 73.162.135.80
+
+**********************************************************
+* W A R N I N G !                                        *
+*                                                        *
+* BY ACCESSING AND USING THIS SYSTEM YOU CONSENT TO      *
+* SYSTEM MONITORING FOR LAW ENFORCEMENT AND OTHER        *
+* PURPOSES.                                              *
+*                                                        *
+* UNAUTHORIZED USE OF THIS COMPUTER SYSTEM MAY SUBJECT   *
+* YOU TO CRIMINAL PROSECUTION AND PENALTIES.             *
+*                                                        *
+* DO NOT COPY OR INSTALL ANY ILLEGAL OR UNLICENSED       *
+* SOFTWARE ON THIS COMPUTER SYSTEM!                      *
+* Refer to CCSF Computer Usage Policy for additional     *
+* information: http://www.ccsf.edu/Policy/NEWpolicy.html *
+*                                                        *
+* INTERNSHIP INFORMATION is in /pub/cs/internships.txt   *
+*                                                        *
+**********************************************************
+
+[jxia7@hills ~]$ string_1="this is a string"
+# Create a double-quoted string
+
+[jxia7@hills ~]$ string_2='this is a string'
+# Create a single-quoted string
+
+[jxia7@hills ~]$ string_3="this is a $string_1"
+# Create a double-quoted string that uses the value of a previously set variable
+
+[jxia7@hills ~]$ string_4='this is a $string_1'
+# Create a single-quoted string that has a variable inside
+
+[jxia7@hills ~]$ result=$((4+3*2-1))
+# Create a variable
+
+[jxia7@hills ~]$ a=2
+# Create a variable
+
+[jxia7@hills ~]$ b=4
+# Create a variable
+
+[jxia7@hills ~]$ c=5
+# Create a variable
+
+[jxia7@hills ~]$ d=6
+# Create a variable
+
+[jxia7@hills ~]$ resultmore=$(($a+$b*$c-$d))
+# Create a variable that that uses other variables for the equation values
+
+[jxia7@hills ~]$ echo $string_1
+this is a string
+# show the string_1
+
+[jxia7@hills ~]$ echo $string_2
+this is a string
+# show the string_2, same as the string_1
+
+[jxia7@hills ~]$ echo $string_3
+this is a this is a string
+# show the string_3 that have a substring
+
+[jxia7@hills ~]$ echo $string_4
+this is a $string_1
+# the $string_1 does not show as "this is a string",because single quotes are NOT parsed by bash.
+
+[jxia7@hills ~]$ echo $result
+9
+# show the result of a mathematical equation
+
+[jxia7@hills ~]$ echo $resultmore
+16
+# the result of a mathematical equation that uses variables for the equation values
+
+[jxia7@hills ~]$ echo $(echo u*)
+u*
+# substitute the results of a commands
+

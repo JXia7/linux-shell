@@ -1,0 +1,102 @@
+###### Test script1
+vagrant@ubuntu-xenial:~/paramlab$ tree
+.
+├── dir1
+│   ├── dir1a
+│   │   ├── dir1a1
+│   │   ├── dir1a2
+│   │   ├── file1
+│   │   └── file2
+│   ├── file1
+│   └── file2
+├── dir2
+│   └── dir2a
+│       └── dir2a1
+│           └── file1
+├── dirs.out
+├── files.out
+├── script1.sh
+└── script2.sh
+
+7 directories, 9 files
+vagrant@ubuntu-xenial:~/paramlab$ ./script1.sh -d dirs.out -f files.out dir1/dir1a/dir1a2 dir2/dir2a/dir2a1 dir1
+dirs.out
+files.out
+dir1/dir1a/dir1a2 exists
+dir2/dir2a/dir2a1 exists
+dir1 exists
+vagrant@ubuntu-xenial:~/paramlab$ cat dirs.out 
+dir1/dir1a/dir1a2
+dir2/dir2a/dir2a1
+dir1
+vagrant@ubuntu-xenial:~/paramlab$ cat files.out 
+
+
+###### Test script2.sh
+vagrant@ubuntu-xenial:~/paramlab$ vim files.out 
+vagrant@ubuntu-xenial:~/paramlab$ cat files.out 
+dir2/dir2a/dir2a1/file1
+dir1/file1
+dor1/file2
+vagrant@ubuntu-xenial:~/paramlab$ ./script2.sh dirs.out files.out 
+dir1
+******
+  File: 'dir2/dir2a/dir2a1/file1'
+  Size: 24        	Blocks: 8          IO Block: 4096   regular file
+Device: 801h/2049d	Inode: 256041      Links: 1
+Access: (0664/-rw-rw-r--)  Uid: ( 1000/ vagrant)   Gid: ( 1000/ vagrant)
+Access: 2019-04-30 06:44:04.077004001 +0000
+Modify: 2019-04-30 06:46:21.221004001 +0000
+Change: 2019-04-30 06:46:21.221004001 +0000
+ Birth: -
+  File: 'dir1/file1'
+  Size: 19        	Blocks: 8          IO Block: 4096   regular file
+Device: 801h/2049d	Inode: 256037      Links: 1
+Access: (0664/-rw-rw-r--)  Uid: ( 1000/ vagrant)   Gid: ( 1000/ vagrant)
+Access: 2019-04-30 06:44:04.077004001 +0000
+Modify: 2019-04-30 06:45:29.289004001 +0000
+Change: 2019-04-30 06:45:29.289004001 +0000
+ Birth: -
+stat: cannot stat 'dor1/file2': No such file or directory
+
+###### Test script3
+vagrant@ubuntu-xenial:~/paramlab$ ./script3.sh 
+dirs.out
+files.out
+dir1 exists
+dir2 exists
+dirs.out exists
+files.out exists
+script1.sh exists
+script2.sh exists
+script3.sh exists
+vagrant@ubuntu-xenial:~/paramlab$ cat dirs.out
+dir1
+dir2
+vagrant@ubuntu-xenial:~/paramlab$ cat files.out
+dirs.out
+files.out
+script1.sh
+script2.sh
+script3.sh
+vagrant@ubuntu-xenial:~/paramlab$ tree
+.
+├── dir1
+│   ├── dir1a
+│   │   ├── dir1a1
+│   │   ├── dir1a2
+│   │   ├── file1
+│   │   └── file2
+│   ├── file1
+│   └── file2
+├── dir2
+│   └── dir2a
+│       └── dir2a1
+│           └── file1
+├── dirs.out
+├── files.out
+├── script1.sh
+├── script2.sh
+└── script3.sh
+
+7 directories, 10 files
